@@ -1,0 +1,46 @@
+{
+  "name": "solana-browser-storage-wallet",
+  "version": "1.0.0",
+  "author": "k-kinzal",
+  "license": "MIT",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "rolldown -c rolldown.config.ts && tsc -p tsconfig.build.json",
+    "dev": "rolldown -c rolldown.config.ts --watch",
+    "types": "tsc -p tsconfig.build.json --watch",
+    "lint": "biome check src --apply",
+    "format": "biome format --write src/",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.8.0",
+    "@solana/wallet-adapter-base": "^0.9.26",
+    "@solana/wallet-standard": "^1.1.4",
+    "@solana/wallet-standard-features": "^1.3.0",
+    "@solana/wallet-standard-util": "^1.1.2",
+    "@solana/web3.js": "^1.98.2",
+    "@wallet-standard/base": "^1.1.0",
+    "@wallet-standard/features": "^1.1.0",
+    "bs58": "^6.0.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.15.18",
+    "rolldown": "^1.0.0-beta.8",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "sideEffects": false
+}
