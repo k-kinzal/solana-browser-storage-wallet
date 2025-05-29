@@ -1,5 +1,5 @@
-import { Keypair } from "@solana/web3.js";
 import { sha256 } from "@noble/hashes/sha2";
+import { Keypair } from "@solana/web3.js";
 import bs58 from "bs58";
 
 const META_KEY = "bsw_current";

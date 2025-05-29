@@ -1,4 +1,5 @@
-import { Wallet, WalletAccount, WalletIcon, WalletVersion } from "@wallet-standard/base";
+import { EventEmitter } from "@solana/wallet-adapter-base";
+import { SOLANA_CHAINS } from "@solana/wallet-standard";
 import {
   SolanaSignAndSendTransaction,
   SolanaSignAndSendTransactionFeature,
@@ -10,6 +11,10 @@ import {
   SolanaSignTransactionFeature,
   SolanaSignTransactionMethod,
 } from "@solana/wallet-standard-features";
+import { SolanaSignAndSendTransactionOutput } from "@solana/wallet-standard-features/src/signAndSendTransaction";
+import { type SolanaTransactionCommitment } from "@solana/wallet-standard-features/src/signTransaction";
+import { Connection } from "@solana/web3.js";
+import { Wallet, WalletAccount, WalletIcon, WalletVersion } from "@wallet-standard/base";
 import {
   StandardConnect,
   StandardConnectFeature,
@@ -17,16 +22,11 @@ import {
   StandardDisconnect,
   StandardDisconnectFeature,
   StandardDisconnectMethod,
-  StandardEventsFeature,
   StandardEvents,
+  StandardEventsFeature,
   StandardEventsOnMethod,
 } from "@wallet-standard/features";
-import { SOLANA_CHAINS } from "@solana/wallet-standard";
 import { BrowserWallet } from "../core";
-import { EventEmitter } from "@solana/wallet-adapter-base";
-import { type SolanaTransactionCommitment } from "@solana/wallet-standard-features/src/signTransaction";
-import { Connection } from "@solana/web3.js";
-import { SolanaSignAndSendTransactionOutput } from "@solana/wallet-standard-features/src/signAndSendTransaction";
 
 /**
  * Features supported by the BrowserStorageStandardWallet.

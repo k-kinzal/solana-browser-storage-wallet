@@ -1,7 +1,7 @@
-import { Keypair, PublicKey, Transaction, VersionedTransaction } from "@solana/web3.js";
-import { BrowserWalletKeyStore } from "./key-store";
-import { sign } from "tweetnacl";
 import { EventEmitter } from "@solana/wallet-adapter-base";
+import { Keypair, PublicKey, Transaction, VersionedTransaction } from "@solana/web3.js";
+import { sign } from "tweetnacl";
+import { BrowserWalletKeyStore } from "./key-store";
 
 /**
  * Base error class for BrowserWallet errors.
@@ -150,7 +150,7 @@ export class BrowserWallet extends EventEmitter<BrowserWalletEventTypes> {
       return {
         address: keypair.publicKey.toBase58(),
         publicKey: keypair.publicKey,
-      }
+      };
     }
     const keypair = Keypair.generate();
     this.#store.save(Uint8Array.from(keypair.secretKey));

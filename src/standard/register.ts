@@ -1,8 +1,8 @@
+import { Commitment, Connection, ConnectionConfig, clusterApiUrl } from "@solana/web3.js";
 import { Wallet } from "@wallet-standard/base";
 import { registerWallet as registerStandardWallet } from "@wallet-standard/wallet";
 import { BrowserWallet, BrowserWalletKeyStore } from "../core";
 import { BrowserStorageStandardWallet } from "./wallet";
-import { clusterApiUrl, Commitment, Connection, ConnectionConfig } from "@solana/web3.js";
 
 /**
  * Options for registering the browser storage wallet.
